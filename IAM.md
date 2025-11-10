@@ -8,10 +8,9 @@ Think of it like a security gate + ID card system for your AWS account.
 Imagine you own an office building:
 You are the owner (Root user).
 You hire employees — some are developers, some are testers, some are accountants.
-You don’t want everyone to have full access to everything.s
+You don’t want everyone to have full access to everything.
 
 So, what do you do?
-
 You give each person an ID card (IAM User).
 You assign permissions:
 Developer → can access servers
@@ -20,32 +19,24 @@ Accountant → can view billing
 Only you → can delete the whole system
 That’s exactly what IAM does for your AWS account!
 
-⚙️ In AWS Terms : 
-| Concept       | Meaning                                                        | Example                          |
-| ------------- | -------------------------------------------------------------- | -------------------------------- |
-| **Root User** | The main account owner (full control)                          | You, the creator of AWS account  |
-| **IAM User**  | A user you create for others (or yourself for daily work)      | “leo-dev” or “hai-admin”         |
-| **IAM Group** | A collection of users with same permissions                    | “Developers”, “Testers”          |
-| **IAM Role**  | Temporary access permission (used by services or applications) | EC2 accessing S3 bucket          |
-| **Policy**    | A document that defines permissions (JSON format)              | “Can read from S3, can’t delete” |
+⚙️ In AWS Terms:
 
+Root User: The main account owner who has full control of the AWS account. (Example: You, the creator of the AWS account)
+IAM User: A user you create for others or for your own daily work. (Example: “leo-dev”, “hai-admin”)
+IAM Group: A collection of users who share the same permissions. (Example: “Developers”, “Testers”)
+IAM Role: Gives temporary access permissions, often used by AWS services or applications. (Example: EC2 accessing an S3 bucket)
+Policy: A JSON document that defines what actions are allowed or denied. (Example: “Can read from S3 but can’t delete”)
 
 🔒 Why IAM is Important
 
 Security – You never use the root account daily.
-
 Control – You give only required access (principle of least privilege).
-
 Tracking – You can see who did what in CloudTrail logs.
-
 Scalability – Easy to manage many users safely.
 
 ✅ Example in Plain English
-
 Let’s say you have an S3 bucket (for storing files).
-
 You want:
-
 You (admin) → Full control
 Developer → Only upload and read
 Tester → Only read
